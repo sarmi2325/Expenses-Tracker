@@ -56,6 +56,9 @@ A simple, secure, and responsive web application built using **Flask** and **SQL
 > ![5](https://github.com/user-attachments/assets/a74f2d09-65e6-4c75-be9c-e4fd0fc9e347)
 
 
+## Live Demo
+
+You can check out the live deployed app here: [https://your-app-url.com](https://expenses-tracker-2-dokm.onrender.com)
 
 
 
