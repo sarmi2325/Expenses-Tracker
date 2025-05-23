@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f3ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            width:100%;
+        }
+
+        .login-container {
+            background-color: #fffdf8;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            max-width: 400px;
+            width: 75%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4b3e2e;
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #d6d2cb;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fcfbf8;
+        }
+
+        button {
+            width: 50%;
+            padding: 0.6rem;
+            
+            background-color: #c49b66;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #a17846;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 1rem;
+            color: #5e5243;
+        }
+
+        a {
+            color: #8e6b3f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            <input name="username" type="text" placeholder="Username" required>
+
+            <div style="position: relative;">
+                <input name="password" type="password" id="password" placeholder="Password" required>
+                <span id="toggleIcon" onclick="togglePassword()" style="position: absolute; right: 10px; top: 35%; transform: translateY(-50%); cursor: pointer;">show</span>
+            </div>
+
+            <center><button type="submit">Login</button></center>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('auth.register') }}">Register</a></p>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = "hide"; // Change icon to hide
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "show"; // Change icon to show
+            }
+        }
+    </script>
+</body>
+
+</html>
+
